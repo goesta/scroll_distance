@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: auto;
+}
+
+.container {
+    padding: 20px;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.scroll-info {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 10px;
+    z-index: 100;
+    max-width: 800px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metrics-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.metric {
+    flex: 1;
+    min-width: 200px;
+    margin: 0 10px 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+.metric h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #3498db;
+}
+
+.metric p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.reset-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 5px;
+}
+
+.reset-button:hover {
+    background-color: #2980b9;
+}
+
+.reset-button:active {
+    background-color: #1c638e;
+    transform: translateY(1px);
+}
+
+.scroll-area {
+    margin-top: 160px; /* More space for the fixed header */
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    text-align: center;
+    overflow: visible;
+}
+
+.spacer {
+    width: 10000px;
+    height: 10000px;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 8px;
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Enhanced grid pattern to make it more visible */
+.spacer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        /* Vertical lines */
+        repeating-linear-gradient(to right, 
+            transparent, 
+            transparent 99px, 
+            rgba(255,255,255,0.2) 99px, 
+            rgba(255,255,255,0.2) 100px,
+            transparent 100px,
+            transparent 199px,
+            rgba(0,0,0,0.05) 199px,
+            rgba(0,0,0,0.05) 200px
+        ),
+        /* Horizontal lines */
+        repeating-linear-gradient(to bottom, 
+            transparent, 
+            transparent 99px, 
+            rgba(255,255,255,0.2) 99px, 
+            rgba(255,255,255,0.2) 100px,
+            transparent 100px,
+            transparent 199px,
+            rgba(0,0,0,0.05) 199px,
+            rgba(0,0,0,0.05) 200px
+        );
+    pointer-events: none;
+    border-radius: 8px;
+}
+
+/* Add coordinate markers */
+.spacer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        /* Coordinate markers at 1000px intervals */
+        repeating-linear-gradient(to right,
+            transparent,
+            transparent 999px,
+            rgba(0,0,0,0.2) 999px,
+            rgba(0,0,0,0.2) 1000px,
+            transparent 1000px,
+            transparent 1999px,
+            rgba(0,0,0,0.3) 1999px,
+            rgba(0,0,0,0.3) 2000px
+        ),
+        repeating-linear-gradient(to bottom,
+            transparent,
+            transparent 999px,
+            rgba(0,0,0,0.2) 999px,
+            rgba(0,0,0,0.2) 1000px,
+            transparent 1000px,
+            transparent 1999px,
+            rgba(0,0,0,0.3) 1999px,
+            rgba(0,0,0,0.3) 2000px
+        );
+    pointer-events: none;
+    border-radius: 8px;
+} 

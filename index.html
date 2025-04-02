@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Distance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scroll-info">
+        <h1>Scroll Distance Tracker</h1>
+        <div class="metrics-container">
+            <div class="metric">
+                <h2>Horizontal (X) Distance:</h2>
+                <p id="x-distance">0 px</p>
+            </div>
+            <div class="metric">
+                <h2>Vertical (Y) Distance:</h2>
+                <p id="y-distance">0 px</p>
+            </div>
+            <div class="metric">
+                <h2>Total Distance:</h2>
+                <p id="total-distance">0 px</p>
+            </div>
+        </div>
+        <button id="reset-button" class="reset-button">Reset Distances</button>
+    </div>
+    
+    <div class="container">
+        <div class="scroll-area">
+            <p>Scroll around in any direction to see the distance tracked.</p>
+            <p>The scrollable area will automatically expand as you approach its edges!</p>
+            <p>Try scrolling as far as you'd like in any direction - even left and up!</p>
+            <p>Click the Reset button to zero the distance counters.</p>
+            <!-- Add extra space for scrolling -->
+            <div class="spacer"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
