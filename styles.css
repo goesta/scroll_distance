@@ -4,18 +4,34 @@
     box-sizing: border-box;
 }
 
-body {
+html {
+    /* Disable smooth scrolling to prevent animation during initial positioning */
+    scroll-behavior: auto !important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
     font-family: 'Arial', sans-serif;
     color: #333;
     line-height: 1.6;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow: auto;
+    /* Match loading screen background color */
+    background-color: #f6d365;
 }
 
 .container {
     padding: 20px;
-    min-width: 100%;
-    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    /* Ensure container doesn't clip content */
+    overflow: visible;
 }
 
 h1 {
@@ -97,6 +113,7 @@ h1 {
     border-radius: 8px;
     text-align: center;
     overflow: visible;
+    position: relative;
 }
 
 .spacer {
@@ -111,7 +128,7 @@ h1 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Enhanced grid pattern to make it more visible */
+/* Enhanced grid pattern to make it more visible - 1000px grid */
 .spacer::before {
     content: '';
     position: absolute;
@@ -124,12 +141,9 @@ h1 {
         repeating-linear-gradient(to right, 
             transparent, 
             transparent 99px, 
-            rgba(255,255,255,0.2) 99px, 
+            rgba(255, 255, 255, 0.2) 99px, 
             rgba(255,255,255,0.2) 100px,
-            transparent 100px,
-            transparent 199px,
-            rgba(0,0,0,0.05) 199px,
-            rgba(0,0,0,0.05) 200px
+            transparent 100px
         ),
         /* Horizontal lines */
         repeating-linear-gradient(to bottom, 
@@ -137,16 +151,13 @@ h1 {
             transparent 99px, 
             rgba(255,255,255,0.2) 99px, 
             rgba(255,255,255,0.2) 100px,
-            transparent 100px,
-            transparent 199px,
-            rgba(0,0,0,0.05) 199px,
-            rgba(0,0,0,0.05) 200px
+            transparent 100px
         );
     pointer-events: none;
     border-radius: 8px;
 }
 
-/* Add coordinate markers */
+/* Main grid lines at 5000px - forms the centered cross */
 .spacer::after {
     content: '';
     position: absolute;
@@ -154,28 +165,23 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-        /* Coordinate markers at 1000px intervals */
-        repeating-linear-gradient(to right,
-            transparent,
-            transparent 999px,
-            rgba(0,0,0,0.2) 999px,
-            rgba(0,0,0,0.2) 1000px,
-            transparent 1000px,
-            transparent 1999px,
-            rgba(0,0,0,0.3) 1999px,
-            rgba(0,0,0,0.3) 2000px
+    /* Create darker lines at 5000px in both directions */
+    background-image:
+        /* Vertical center line */
+        linear-gradient(to right,
+            transparent 4999px,
+            rgba(0,0,0,0.5) 4999px,
+            rgba(0,0,0,0.5) 5001px,
+            transparent 5001px
         ),
-        repeating-linear-gradient(to bottom,
-            transparent,
-            transparent 999px,
-            rgba(0,0,0,0.2) 999px,
-            rgba(0,0,0,0.2) 1000px,
-            transparent 1000px,
-            transparent 1999px,
-            rgba(0,0,0,0.3) 1999px,
-            rgba(0,0,0,0.3) 2000px
+        /* Horizontal center line */
+        linear-gradient(to bottom,
+            transparent 4999px,
+            rgba(0,0,0,0.5) 4999px,
+            rgba(0,0,0,0.5) 5001px,
+            transparent 5001px
         );
     pointer-events: none;
     border-radius: 8px;
+    z-index: 1;
 } 
