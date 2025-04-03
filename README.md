@@ -15,7 +15,7 @@ A simple web application that tracks and displays the total scrolled distance in
 
 ## Live Demo
 
-You can try the application live at: [https://yourusername.github.io/scroll_distance/](https://yourusername.github.io/scroll_distance/)
+You can try the application live at: [https://goesta.github.io/scroll_distance/](https://goesta.github.io/scroll_distance/)
 
 ## How It Works
 
@@ -35,7 +35,7 @@ The application dynamically extends the scroll area as you approach any edge, cr
 To run this project locally:
 
 ```bash
-git clone https://github.com/yourusername/scroll_distance.git
+git clone https://github.com/goesta/scroll_distance.git
 cd scroll_distance
 # Simply open index.html in your browser
 ```
