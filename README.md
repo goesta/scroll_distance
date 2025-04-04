@@ -2,7 +2,7 @@
 
 A simple web application that tracks and displays the total scrolled distance in both the horizontal (X) and vertical (Y) directions in pixels. 100% build by ai.
 
-![Scroll Distance Tracker](favicon-512.png)
+![Scroll Distance Tracker](favicon-192.png)
 
 ## Features
 
