@@ -3,8 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scroll Distance Tracker</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Scroll Distance Tracker | Measure How Far You Scroll in Pixels</title>
+    <meta name="title" content="Scroll Distance Tracker | Measure How Far You Scroll in Pixels">
+    <meta name="description" content="A simple tool that tracks and displays the total distance scrolled in both horizontal and vertical directions. Features unlimited scrolling in all directions.">
+    <meta name="keywords" content="scroll tracker, pixel distance, scroll measurement, web tool, javascript utility, scroll distance">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://goesta.github.io/scroll_distance/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://goesta.github.io/scroll_distance/">
+    <meta property="og:title" content="Scroll Distance Tracker | Measure How Far You Scroll in Pixels">
+    <meta property="og:description" content="A simple tool that tracks and displays the total distance scrolled in both horizontal and vertical directions. Features unlimited scrolling in all directions.">
+    <meta property="og:image" content="https://goesta.github.io/scroll_distance/favicon-512.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://goesta.github.io/scroll_distance/">
+    <meta property="twitter:title" content="Scroll Distance Tracker | Measure How Far You Scroll in Pixels">
+    <meta property="twitter:description" content="A simple tool that tracks and displays the total distance scrolled in both horizontal and vertical directions. Features unlimited scrolling in all directions.">
+    <meta property="twitter:image" content="https://goesta.github.io/scroll_distance/favicon-512.png">
+    
     <link rel="stylesheet" href="styles.css">
+    
     <!-- Favicons -->
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -12,6 +36,32 @@
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
     <meta name="theme-color" content="#f6d365">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Scroll Distance Tracker",
+      "url": "https://goesta.github.io/scroll_distance/",
+      "description": "A simple tool that tracks and displays the total distance scrolled in both horizontal and vertical directions. Features unlimited scrolling in all directions.",
+      "applicationCategory": "UtilityApplication",
+      "genre": "web tool",
+      "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "operatingSystem": "Any",
+      "screenshot": "https://goesta.github.io/scroll_distance/favicon-512.png",
+      "author": {
+        "@type": "Person",
+        "name": "Your Name"
+      }
+    }
+    </script>
+    
     <style>
         /* Loading overlay */
         #loading-overlay {
@@ -81,42 +131,49 @@
         <div class="spinner"></div>
     </div>
 
-    <div class="scroll-info">
-        <h1>Scroll Distance Tracker</h1>
-        <div class="metrics-container">
-            <div class="metric">
-                <h2>Horizontal (X) Distance:</h2>
-                <p id="x-distance">0 px</p>
+    <header>
+        <div class="scroll-info">
+            <h1>Scroll Distance Tracker</h1>
+            <div class="metrics-container">
+                <div class="metric">
+                    <h2>Horizontal (X) Distance:</h2>
+                    <p id="x-distance">0 px</p>
+                </div>
+                <div class="metric">
+                    <h2>Vertical (Y) Distance:</h2>
+                    <p id="y-distance">0 px</p>
+                </div>
+                <div class="metric">
+                    <h2>Total Distance:</h2>
+                    <p id="total-distance">0 px</p>
+                </div>
             </div>
-            <div class="metric">
-                <h2>Vertical (Y) Distance:</h2>
-                <p id="y-distance">0 px</p>
-            </div>
-            <div class="metric">
-                <h2>Total Distance:</h2>
-                <p id="total-distance">0 px</p>
-            </div>
+            <button id="reset-button" class="reset-button">Reset Distances</button>
         </div>
-        <button id="reset-button" class="reset-button">Reset Distances</button>
-    </div>
+    </header>
     
-    <div class="container">
+    <main class="container">
         <div class="scroll-area">
-            <p>Scroll around in any direction to see the distance tracked.</p>
-            <p>The scrollable area will automatically expand as you approach its edges!</p>
-            <p>Try scrolling as far as you'd like in any direction - even left and up!</p>
-            <p>Click the Reset button to zero the distance counters.</p>
+            <section class="instructions">
+                <h2>How to Use This Tool</h2>
+                <p>Scroll around in any direction to see the distance tracked.</p>
+                <p>The scrollable area will automatically expand as you approach its edges!</p>
+                <p>Try scrolling as far as you'd like in any direction - even left and up!</p>
+                <p>Click the Reset button to zero the distance counters.</p>
+            </section>
             <!-- Add extra space for scrolling -->
-            <div class="spacer"></div>
+            <div class="spacer" aria-hidden="true"></div>
         </div>
-    </div>
+    </main>
 
-    <!-- GitHub Link -->
-    <a href="https://github.com/yourusername/scroll_distance" target="_blank" class="github-link" aria-label="View source on GitHub">
-        <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
-            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-        </svg>
-    </a>
+    <footer>
+        <!-- GitHub Link -->
+        <a href="https://github.com/goesta/scroll_distance" target="_blank" rel="noopener" class="github-link" aria-label="View source on GitHub">
+            <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
+                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+        </a>
+    </footer>
     
     <script src="script.js"></script>
 </body>

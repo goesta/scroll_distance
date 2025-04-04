@@ -2,6 +2,8 @@
 
 A simple web application that tracks and displays the total scrolled distance in both the horizontal (X) and vertical (Y) directions in pixels. 100% build by ai.
 
+![Scroll Distance Tracker](favicon-512.png)
+
 ## Features
 
 - Real-time tracking of scroll distance
@@ -61,4 +63,8 @@ This project is set up to be deployed to GitHub Pages. To deploy your own versio
 This application works in all modern browsers that support:
 - ES6 JavaScript
 - CSS position: fixed
-- window.scrollX/Y or window.pageXOffset/YOffset 
+- window.scrollX/Y or window.pageXOffset/YOffset
+
+## Keywords
+
+scroll tracker, distance measurement, pixel tracking, scroll distance, web utility, JavaScript tool, unlimited scrolling, scroll measurement 
