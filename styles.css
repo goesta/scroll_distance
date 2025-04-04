@@ -41,10 +41,12 @@ h1 {
 }
 
 .scroll-info {
-    background-color: #f8f9fa;
+    background-color: rgba(248, 249, 250, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     position: fixed;
     top: 10px;
     z-index: 100;
@@ -55,6 +57,12 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.scroll-info:hover {
+    background-color: rgba(248, 249, 250, 0.95);
 }
 
 .metrics-container {
